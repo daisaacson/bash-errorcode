@@ -1,6 +1,6 @@
 Summary: Displays error code in command prompt, if return code is not 0.
 Name: bash-errorcode
-Version: 0.1
+Version: 0.2
 Release: 0%{?dist}
 BuildArch: noarch
 License: GPLv3
@@ -32,5 +32,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0644,root,root) %{_sysconfdir}/profile.d/*
 
 %changelog
+* Tue Jul 29 2014 daisaacson <49328302+daisaacson@users.noreply.github.com> - 0.2-0
+- Print error codes from $PIPESTATUS variable
+
 * Mon Jul 28 2014 daisaacson <49328302+daisaacson@users.noreply.github.com> - 0.1-0
 - Initial build
