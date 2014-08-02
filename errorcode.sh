@@ -27,8 +27,8 @@ ps1_error ()
 
         # Check number of colors supported
         if [[ $(tput colors) -lt 8 ]]; then
-            use_colors=0
-        fi
+            use_colors=0;
+        fi;
 
         # Print codes if there were errors
         printf ' ';
