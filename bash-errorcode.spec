@@ -5,7 +5,7 @@ Release: 0%{?dist}
 BuildArch: noarch
 License: GPLv3
 Group: Applications/System
-Source0: https://raw.githubusercontent.com/daisaacson/bash-errorcode/${name}/%{name}-%{version}.tar.gz
+Source0: https://raw.githubusercontent.com/daisaacson/bash-errorcode/%{name}/%{name}-%{version}.tar.gz
 Url: https://raw.githubusercontent.com/daisaacson/bash-errorcode/bash-errorcode
 Buildroot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
