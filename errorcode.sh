@@ -12,16 +12,19 @@ print_red ()
 ps1_error () 
 { 
     codes=${@};   # array of return codes
-    codes_sum=0;  # sum of all return codes
+    error=0;      # boolean if error exists
 
-    # Get sum of all return codes
-    for c in $codes;
+    # Determine if there were any errors
+    for code in $codes;
     do
-        codes_sum=$((codes_sum+$c));
+        if [[ $code -ne 0 ]]; then
+            error=1;
+            break;
+        fi;
     done;
 
     # If there were errors, print codes
-    if [[ ! $codes_sum -eq 0 ]]; then
+    if [[ $error -ne 0 ]]; then
         num_codes=$#;  # number of return codes
         use_colors=1;  # enable colors
 
