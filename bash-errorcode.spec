@@ -1,6 +1,6 @@
 Summary: Display error codes from commands in your bash prompt
 Name: bash-errorcode
-Version: 0.3
+Version: 0.4
 Release: 0%{?dist}
 BuildArch: noarch
 License: GPLv3
@@ -33,6 +33,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(0644,root,root) %{_sysconfdir}/profile.d/*
 
 %changelog
+* Sat Apr 25 2015 daisaacson <49328302+daisaacson@users.noreply.github.com> -0.4-0
+- Unified print functions
+
 * Sat Aug 1 2014 daisaacson <49328302+daisaacson@users.noreply.github.com> - 0.3-0
 - Detect if TERM supports color
 - Add comments to script
