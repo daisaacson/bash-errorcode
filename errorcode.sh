@@ -1,18 +1,21 @@
-# Print green text
-print_green () 
-{ 
-    printf '\001\033[0;32m\002%s\001\033[0m\002' $1;
-}
-# Print red text
-print_red () 
-{ 
-    printf '\001\033[1;31m\002%s\001\033[0m\002' $1;
+# Variables you can put in your .bash_profile etc.
+#     PS1_ERROR_0  color for exit code 0  0;32m is green
+#     PS1_ERROR_1  color for error codes  1;31m is bold red
+
+# Print text in color
+ps1_print_color ()
+{
+    m="${1:-xxx}";  # message
+    c="${2:-0m}";   # color
+    printf '\001\033[%s\002%s\001\033[0m\002' "$c" "$m"
 }
 # Print error codes
 ps1_error () 
 { 
-    codes=${@};   # array of return codes
-    error=0;      # boolean if error exists
+    codes=${@};                       # array of return codes
+    error=0;                          # boolean if error exists
+    color_0="${PS1_ERROR_0:-0;32m}";  # good color
+    color_1="${PS1_ERROR_1:-1;31m}";  # bad color
 
     # Determine if there were any errors
     for code in $codes;
@@ -40,9 +43,9 @@ ps1_error ()
             # Print error code in applicable color
             if [[ $use_colors -eq 1 ]]; then
                 if [[ $code -eq 0 ]]; then
-                    print_green $code;
+                    ps1_print_color $code $color_0;
                 else
-                    print_red $code;
+                    ps1_print_color $code $color_1;
                 fi;
             else
                 printf '%s' $code;
