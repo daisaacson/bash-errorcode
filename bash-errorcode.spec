@@ -1,7 +1,7 @@
 Summary: Display error codes from commands in your bash prompt
 Name: bash-errorcode
 Version: 0.4
-Release: 0%{?dist}
+Release: 1%{?dist}
 BuildArch: noarch
 License: GPLv3
 Group: Applications/System
